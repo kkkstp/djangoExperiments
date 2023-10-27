@@ -1,0 +1,10 @@
+.d1 {
+    border: solid red;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:auto;
+}
