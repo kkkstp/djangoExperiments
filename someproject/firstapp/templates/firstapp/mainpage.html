@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% block title %}
 <h1>Главная страница</h1>
-{% endblock content %}
+{% endblock title %}
+
+{% block list_of_links %}
+<ul>
+{% for p in post %}
+    <li><a href='{{ url 'show_post' }}'>Ссылка на страницу объекта</a></li>
+{% endfor %}
+</ul>
+{% endblock list_of_links %}
+
+<!-p.get_absolute_url-->
