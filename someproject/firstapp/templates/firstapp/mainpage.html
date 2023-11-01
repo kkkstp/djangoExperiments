@@ -6,10 +6,8 @@
 
 {% block list_of_links %}
 <ul>
-{% for p in post %}
-    <li><a href='{{ url 'show_post' }}'>Ссылка на страницу объекта</a></li>
+{% for p in posts %}
+    <li>{{p.name}} {{p.second_name}} {{p.age}} <a href="{{ p.get_absolute_url }}">Ссылка</a></li>
 {% endfor %}
 </ul>
 {% endblock list_of_links %}
-
-<!-p.get_absolute_url-->

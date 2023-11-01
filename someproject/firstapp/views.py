@@ -5,15 +5,15 @@ from .models import MainDB
 
 
 def base(request):
-    post = MainDB.objects.all()
-    #print(post)
+    posts = MainDB.objects.all()
     data = {
-        'post': post,
+        'posts': posts,
     }
     return render(request, 'firstapp/mainpage.html', context=data)
 
 def show_table(request, post_slug):
-    post = get_object_or_404(MainDB, pk=post_slug)
-    data = {'post': post,
+    post = get_object_or_404(MainDB, slug=post_slug)
+    data = {
+        'post': post,
         }
     return render(request, 'firstapp/tableDB.html', context=data)

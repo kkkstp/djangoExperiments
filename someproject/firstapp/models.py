@@ -12,4 +12,6 @@ class MainDB(models.Model):
         return self.name
 
     def get_absolute_url(self):
+        print(reverse('post', kwargs={'post_slug': self.slug}))
         return reverse('post', kwargs={'post_slug': self.slug})
+
