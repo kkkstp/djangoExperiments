@@ -9,19 +9,26 @@
 </head>
 <body>
 
-<div class="d1">
+<div class="menu">
+    <ul>
+        <li>Main page</li>
+        <li>Actions</li>
+        <li>About</li>
+        <li>Contacts</li>
+    </ul>
+</div>
+
+<div class="title">
 {% block title %}
+<h2>Main page</h2>
 {% endblock title %}
 </div>
 
-<div class="list_of_links">
-{% block list_of_links %}
-{% endblock list_of_links %}
-</div>
+<hr>
 
-<div class="tableDB">
-{% block table %}
-{% endblock table %}
+<div>
+{% block content %}
+{% endblock content %}
 </div>
 
 </body>

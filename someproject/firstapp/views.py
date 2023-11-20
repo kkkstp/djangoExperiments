@@ -1,19 +1,14 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 
-from .models import MainDB
-
-
-def base(request):
-    posts = MainDB.objects.all()
+menu = [{'title': "Main page", 'url_name': 'mainpage'},
+        {'title': "Add person", 'url_name': 'add_person'},
+        {'title': "Contacts", 'url_name': 'contact'},
+        {'title': "About", 'url_name': 'about'}
+]
+def index(request):
     data = {
-        'posts': posts,
+        'title': 'Main page',
+        'menu': menu,
     }
-    return render(request, 'firstapp/mainpage.html', context=data)
-
-def show_table(request, post_slug):
-    post = get_object_or_404(MainDB, slug=post_slug)
-    data = {
-        'post': post,
-        }
-    return render(request, 'firstapp/tableDB.html', context=data)
+    return render(request, 'firstapp/index.html')
