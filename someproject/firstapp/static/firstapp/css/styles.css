@@ -1,18 +1,48 @@
+html, body {
+width: 100%;
+height: 100%;
+margin:0;
+padding:0;
+}
+
 *{
-margin: 0;
-padding: 0;
+margin:0;
+padding:0;
+}
+
+.top_bar  {
+height: auto;
+display: flex;
+align-items: center;
+}
+
+.menu {
+margin-left: 10px;
 }
 
 .menu li{
-display: block;
+display: inline;
 padding: 10px;
+height:50px;
 }
 
 .title {
-position:absolute;
+margin-left:40%;
 border: 4px solid red;
-width:220px;
-height: 90px;
-right:20%;
-top:0%;
+height:50px;
+position:relative;
+}
+
+.title h2{
+transform: translate(0, -50%);
+top: 50%;
+position: relative;
+}
+
+.content {
+font: 1.2rem "Fira Sans", sans-serif;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
 }
