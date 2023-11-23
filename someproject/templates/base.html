@@ -13,25 +13,25 @@
 
     <div class="menu">
     <ul>
+        {% for m in menu %}
         <li>Main page</li>
         <li>Actions</li>
         <li>About</li>
         <li>Contacts</li>
+        {% endfor %}
     </ul>
     </div>
 
     <div class="title">
-        {% block title %}
-        <h2>Main page</h2>
-        {% endblock title %}
+        <h2><a href="{% url url_name %}">{{title}}</a></h2>
     </div>
 </div>
 
 <hr>
 
 <div class="content">
-{% block content %}
-{% endblock content %}
+    {% block content %}
+    {% endblock content %}
 </div>
 
 </body>
