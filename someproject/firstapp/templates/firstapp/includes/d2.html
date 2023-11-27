@@ -1,3 +1,22 @@
-<d1>
-    <p>hellohello</p>
-</d1>
+<d2>
+    <div>
+        <table class="table_content" border="1">
+
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for m in Men %}
+                    <tr>
+                        <td>{{m.name}}</td> {{m.second_name}}</td> <td>{{m.age}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+</d2>
