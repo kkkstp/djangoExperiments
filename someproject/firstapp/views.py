@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
-from .models import Men
+from .models import Men, Professions
 
 menu = [{'title': 'Main page', 'url_name': 'index'},
         {'title': 'Table', 'url_name': 'table'},
@@ -8,8 +8,9 @@ menu = [{'title': 'Main page', 'url_name': 'index'},
         {'title': 'About', 'url_name': 'show_about'}
 ]
 
-links = ['one', 'two', 'three', 'four', 'five']
+linksOfProfession = Professions.objects.all()
 Men = Men.objects.all()
+
 def index(request):
     title, url_name = menu[0]['title'], menu[0]['url_name']
     data = {
@@ -25,10 +26,23 @@ def table(request):
         'title': title,
         'menu': menu,
         'url_name': url_name,
-        'links': links,
+        'links': linksOfProfession,
         'Men': Men,
     }
     return render(request, 'firstapp/table.html', context=data)
+
+def show_professions(request, name_slug):
+    title, url_name = "а че", menu[2]['url_name']
+    linksOfProfession = Men.objects.filter(slug='name_slug')
+    data = {
+        'title': title,
+        'menu': menu,
+        'url_name': url_name,
+        'links': linksOfProfession,
+        'Men': Men,
+    }
+
+    return render(request, 'firstapp/professions.html', context=data)
 
 def show_contacts(request):
     title, url_name = menu[2]['title'], menu[2]['url_name']
@@ -37,7 +51,7 @@ def show_contacts(request):
         'menu': menu,
         'url_name': url_name,
     }
-    return render(request, 'firstapp/show_contacts.html', context=data)
+    return render(request, 'firstapp/show_about.html', context=data)
 
 def show_about(request):
     title, url_name = menu[3]['title'], menu[3]['url_name']

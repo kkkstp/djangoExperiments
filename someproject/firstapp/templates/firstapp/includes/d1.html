@@ -1,5 +1,5 @@
 <d1>
     {% for i in links %}
-        <a href="#">{{ i }}</font></a> <br>
+        <a href="{{ i.get_absolute_url }}">{{ i.title }}</a> <br>
     {% endfor %}
 </d1>
