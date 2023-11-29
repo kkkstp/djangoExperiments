@@ -6,4 +6,5 @@ urlpatterns = [
     path('table/', views.table, name='table'),
     path('contacts/', views.show_contacts, name='show_contacts'),
     path('about/', views.show_about, name='show_about'),
+    path('men/<slug:k_slug>/', views.show_person, name='show_person'),
 ]

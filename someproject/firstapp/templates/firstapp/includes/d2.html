@@ -12,7 +12,7 @@
             <tbody>
                 {% for m in Men %}
                     <tr>
-                        <td>{{m.name}}</td> {{m.second_name}}</td> <td>{{m.age}}</td>
+                        <td>{{ m.name }} {{ m.slug }} <a href="{{ m.get_absolute_url }}">Жми сюда</a></td>
                     </tr>
                 {% endfor %}
             </tbody>

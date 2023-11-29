@@ -48,7 +48,8 @@ def show_about(request):
     }
     return render(request, 'firstapp/show_about.html', context=data)
 
-def show_person(request):
+def show_person(request, k_slug):
+    men = get_object_or_404(Men, slug=k_slug)
     title, url_name = menu[1]['title'], menu[1]['url_name']
     data = {
         'title': title,

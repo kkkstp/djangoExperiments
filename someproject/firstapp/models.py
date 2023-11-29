@@ -10,4 +10,8 @@ class Men(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('men', kwargs={'slug': self.slug})
+        return reverse('show_person', kwargs={'k_slug': self.slug})
+
+    # def get_absolute_url(self):
+    #     return reverse('men', args=(self.slug))
+
