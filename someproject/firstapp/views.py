@@ -9,7 +9,7 @@ menu = [{'title': 'Main page', 'url_name': 'index'},
 ]
 
 linksOfProfession = Professions.objects.all()
-Men = Men.objects.all()
+Men_0 = Men.objects.all()
 
 def index(request):
     title, url_name = menu[0]['title'], menu[0]['url_name']
@@ -26,20 +26,20 @@ def table(request):
         'title': title,
         'menu': menu,
         'url_name': url_name,
-        'links': linksOfProfession,
-        'Men': Men,
+        'linksOfProfession': linksOfProfession,
+        'Men': Men_0,
     }
     return render(request, 'firstapp/table.html', context=data)
 
 def show_professions(request, name_slug):
     title, url_name = "а че", menu[2]['url_name']
-    linksOfProfession = Men.objects.filter(slug='name_slug')
+    abs = Professions.objects.get(slug=name_slug)
+    linksOfProfession = abs.men_set.all()
     data = {
         'title': title,
         'menu': menu,
         'url_name': url_name,
         'links': linksOfProfession,
-        'Men': Men,
     }
 
     return render(request, 'firstapp/professions.html', context=data)
