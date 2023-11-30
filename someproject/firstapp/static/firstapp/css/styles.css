@@ -5,13 +5,10 @@ margin:0;
 padding:0;
 }
 
-*{
-margin:0;
-padding:0;
-}
+/* верхний сайдбар */
 
 .top_bar  {
-height: auto;
+height: 60px;
 display: flex;
 align-items: center;
 }
@@ -42,6 +39,7 @@ border-radius: 30px;
 border: 4px solid red;
 padding: 4px;
 box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.5);
+margin-bottom:10px;
 }
 
 .links_at_menu {
@@ -53,7 +51,9 @@ border-radius: 30px;
 padding: 4px;
 }
 
-.block_skeleton {
+/* конец верхнего сайдбара */
+
+.block_table {
 height:100%;
 }
 

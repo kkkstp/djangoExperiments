@@ -14,18 +14,28 @@
     <div class="menu">
     <ul>
         {% for m in menu %}
-            <li> <a class="links_at_menu" href="{% url m.url_name %}">{{m.title}}</a> </li>
+            <li> <a class="links_at_menu" href="#">{{m.title}}</a> </li>
         {% endfor %}
     </ul>
     </div>
 
     <div class="title">
-        <h2><a class="link_on_title" href="{% url url_name %}">{{title}}</a></h2>
+        <h2><a class="link_on_title" href="#">{{title}}</a></h2>
     </div>
 
 </div>
 
 {% block content %}
+
+<div class="block_table">
+    <table class="table_skeleton" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <td id="qwe">{% include 'firstapp/includes/d1.html' %}</td>
+            <td align="center">{% block right_side %}{% include 'firstapp/includes/d2.html' %}{% endblock right_side %}</td>
+        </tr>
+    </table>
+</div>
+
 {% endblock content %}
 
 </body>
