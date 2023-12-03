@@ -5,14 +5,14 @@
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Age</th>
+                    <th>Slug</th>
                 </tr>
             </thead>
 
             <tbody>
-                {% for m in Men %}
+                {% for m in Equipment %}
                     <tr>
-                        <td>{{ m.name }} {{ m.slug }} <a href="{{ m.get_absolute_url }}">Жми сюда</a></td>
+                        <td>{{ m.title }} {{ m.slug }} <a href="{{ m.get_absolute_url }}">Жми сюда</a></td>
                     </tr>
                 {% endfor %}
             </tbody>

@@ -1,25 +1,19 @@
 from django.db import models
 from django.urls import reverse
 
-class Men(models.Model):
-    name = models.CharField(max_length=100)
-    second_name = models.CharField(max_length=100, blank=True)
-    age = models.IntegerField()
-    slug = models.SlugField(db_index=True, unique=True, blank=True)
-    prof = models.ForeignKey('Professions', on_delete=models.SET_NULL, null=True)
-    def __str__(self):
-        return self.name
+class Equipment(models.Model):
+    class State(models.IntegerChoices):
+        ON = 0, "On"
+        OFFa = 1, "Off"
 
-    def get_absolute_url(self):
-        return reverse('show_person', kwargs={'k_slug': self.slug})
-
-class Professions(models.Model):
     title = models.CharField(max_length=100)
-    relevance = models.BooleanField()
-    slug = models.SlugField(db_index=True, unique=True, blank=True, default='')
+    slug = models.SlugField(db_index=True, unique=True, blank=True)
+    descr = models.CharField(max_length=100, blank=True)
+    state = models.BooleanField(choices=State.choices)
+
     def __str__(self):
         return self.title
 
-    def get_absolute_url(self):
-        return reverse('show_professions', kwargs={'name_slug': self.slug})
+    # def get_absolute_url(self):
+    #     return reverse('show_person', kwargs={'slug': self.slug})
 

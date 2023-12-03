@@ -1,18 +1,26 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
-from .models import Men, Professions
+from .models import Equipment
 
-menu = [{'title': 'Main page', 'url_name': 'index'},
-        {'title': 'Table', 'url_name': 'table'},
-        {'title': 'Contacts', 'url_name': 'show_contacts'},
-        {'title': 'About', 'url_name': 'show_about'}
-]
+menu = [{'title': 'Navigation', 'url_name': 'index'},
+        {'title': 'Equipment', 'url_name': 'equipment'},
+        ]
+
+equipment = Equipment.objects.all()
 
 def index(request):
-    title, url_name = 'Main page', 'index'
-    data = {
-        'title': title,
-        'menu': menu,
-        'url_name': url_name,
+   data = {
+       'title': menu[0]['title'],
+       'menu': menu,
+       'url_name': menu[0]['url_name'],
     }
-    return render(request, 'firstapp/index.html', context=data)
+   return render(request, 'firstapp/index.html', context=data)
+
+def equipment(request):
+   data = {
+       'title': menu[1]['title'],
+       'menu': menu,
+       'url_name': menu[1]['url_name'],
+       'equipment': equipment,
+    }
+   return render(request, 'firstapp/equipment.html', context=data)

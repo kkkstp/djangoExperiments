@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="block_table">
+
+    <table id="table_skeleton">
+        <tr>
+            <td id="qwe">{% include 'firstapp/includes/d1.html' %}</td>
+            <td align="center">{% block right_side %}{% include 'firstapp/includes/d2.html' %}{% endblock right_side %}</td>
+        </tr>
+    </table>
+</div>
+{% endblock content %}
