@@ -1,18 +1,22 @@
 <d2>
+    {% for m in equipment %}
+    {{ m.title }}
+    {% endfor %}
     <div>
         <table class="table_content" border="1">
 
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Slug</th>
+                    <th>Description</th>
+                    <th>State</th>
                 </tr>
             </thead>
 
             <tbody>
-                {% for m in Equipment %}
+                {% for m in equip %}
                     <tr>
-                        <td>{{ m.title }} {{ m.slug }} <a href="{{ m.get_absolute_url }}">Жми сюда</a></td>
+                        <td>{{ m.title }}</td> <td>{{ m.type.label }}</td> <td>{{ m.descr }}</td> <td>{{ m.state }}</td>
                     </tr>
                 {% endfor %}
             </tbody>

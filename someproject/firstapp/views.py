@@ -6,7 +6,7 @@ menu = [{'title': 'Navigation', 'url_name': 'index'},
         {'title': 'Equipment', 'url_name': 'equipment'},
         ]
 
-equipment = Equipment.objects.all()
+equip = Equipment.objects.all()
 
 def index(request):
    data = {
@@ -19,8 +19,8 @@ def index(request):
 def equipment(request):
    data = {
        'title': menu[1]['title'],
-       'menu': menu,
        'url_name': menu[1]['url_name'],
-       'equipment': equipment,
+       'menu': menu,
+       'equip': equip,
     }
    return render(request, 'firstapp/equipment.html', context=data)
