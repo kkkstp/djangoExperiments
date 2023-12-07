@@ -1,9 +1,10 @@
-from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from .models import Equipment
+from .forms import AddEquipment
 
 menu = [{'title': 'Navigation', 'url_name': 'index'},
         {'title': 'Equipment', 'url_name': 'equipment'},
+        {'title': 'Adding equipment', 'url_name': 'addequip'},
         ]
 
 equip = Equipment.objects.all()
@@ -24,3 +25,13 @@ def equipment(request):
        'equip': equip,
     }
    return render(request, 'firstapp/equipment.html', context=data)
+
+def addequip(request):
+    form = AddEquipment()
+    data = {
+       'title': menu[2]['title'],
+       'url_name': menu[2]['url_name'],
+       'menu': menu,
+       'form': form,
+    }
+    return render(request, 'firstapp/addequip.html', context=data)
