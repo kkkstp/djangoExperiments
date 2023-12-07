@@ -27,8 +27,7 @@ height:50px;
 }
 
 .title {
-width: 140px;
-margin-left: 55%;
+width:auto;
 height: 50px;
 position: relative;
 display: flex;
