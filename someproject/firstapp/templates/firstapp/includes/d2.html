@@ -8,6 +8,7 @@
             <thead>
                 <tr>
                     <th>Name</th>
+                    <th>Type</th>
                     <th>Description</th>
                     <th>State</th>
                 </tr>
@@ -16,7 +17,7 @@
             <tbody>
                 {% for m in equip %}
                     <tr>
-                        <td>{{ m.title }}</td> <td>{{ m.type.label }}</td> <td>{{ m.descr }}</td> <td>{{ m.state }}</td>
+                        <td>{{ m.title }}</td> <td>{{ m.get_type_display }}</td> <td>{{ m.descr }}</td> <td>{{ m.state }}</td>
                     </tr>
                 {% endfor %}
             </tbody>

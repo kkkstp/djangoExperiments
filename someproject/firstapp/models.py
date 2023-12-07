@@ -11,8 +11,7 @@ class Equipment(models.Model):
         SWITCH = "sw", "switch"
         ROUTER = "r", "router"
         CAMERA = "cam", "camera"
-        UNKNOW = "un", "unknow"
-
+        UNKNOW = "un", "unknown"
 
     title = models.CharField(max_length=100)
     slug = models.SlugField(db_index=True, unique=True, blank=True)
@@ -25,4 +24,3 @@ class Equipment(models.Model):
 
     # def get_absolute_url(self):
     #     return reverse('show_person', kwargs={'slug': self.slug})
-
