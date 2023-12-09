@@ -17,6 +17,7 @@ border-bottom: 2px solid black;
 }
 
 .menu {
+width:70em;
 margin-left: -15px;
 }
 
@@ -26,13 +27,15 @@ padding: 10px;
 height:50px;
 }
 
+#before-table {
+}
+
 .title {
+display:flex;
 width:auto;
 height: 50px;
-position: relative;
-display: flex;
-justify-content: center;
 align-items: center;
+justify-content: right;
 }
 
 .link_on_title {
@@ -95,4 +98,8 @@ border-collapse: collapse;
 d2 th, td {
 border:2px solid black;
 text-align: -webkit-center;
+}
+
+.addequip {
+
 }

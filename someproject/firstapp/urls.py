@@ -3,6 +3,6 @@ from firstapp import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('equipment/', views.equipment, name='equipment'),
-    path('addequip/', views.addequip, name='addequip'),
+    path('searching_equipment/', views.searching_equipment, name='searching_equipment'),
+    #path('addequip/', views.addequip, name='addequip'),
 ]

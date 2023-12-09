@@ -1,8 +1,8 @@
 from django import forms
-from .models import Equipment
+from .models import EquipmentNet
 
 
 class AddEquipment(forms.ModelForm):
     class Meta:
-        model = Equipment
+        model = EquipmentNet
         fields = ['title', 'slug', 'descr', 'state', 'type']
