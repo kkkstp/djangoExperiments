@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Данные добавлены!</h1>
+<h2>{{name}} {{second_name}}</h2>
+<p>{{content}}</p>
+<a href="{% url 'index' %}">Главная страница</a> <a href="{% url 'add_person' %}">Добавить ещё статью</a>
+{% endblock content %}

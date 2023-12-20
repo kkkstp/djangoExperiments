@@ -1,5 +1,11 @@
 from django import forms
+from .models import SomeDB
+class AddPerson(forms.ModelForm):
 
-class AddPerson(forms.Form):
-    name = forms.CharField(max_length=100)
-    second_name = forms.CharField(max_length=100)
+    class Meta:
+        model = SomeDB
+        fields = ['name', 'second_name', 'content']
+        widgets = {
+            'content': forms.Textarea(attrs={'cols': 50, 'rows': 9})
+        }
+

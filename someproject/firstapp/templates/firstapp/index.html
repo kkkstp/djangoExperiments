@@ -2,6 +2,9 @@
 
 {% block content %}
 {% for i in somedb %}
-<p>Name - {{i.name}} ||| Second name - {{i.second_name}}</p>
+<h1>{{i.name}} {{i.second_name}}</h1>
+<p>{{i.content}}</p>
+<button type="submit">Редактировать</button> <button type="submit">Удалить</button>
+<hr>
 {% endfor %}
 {% endblock content %}
